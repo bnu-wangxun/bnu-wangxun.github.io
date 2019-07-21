@@ -7,7 +7,6 @@ highlighter: rouge
 markdown: kramdown
 disqus: dbyll
 google_analytics: dbyll
-#title: Zhang Aoqian
 
 defaults:
   -
@@ -16,11 +15,11 @@ defaults:
     values:
       title: Homepage
 
-description: Homepage of Zhang Aoqian
+description: Homepage of Xun Wang
 author:
-  name: Zhang Aoqian
-  email: zaqthss2009@gmail.com
-  github: zaqthss
+  name: Xun Wang
+  email: bnuwangxun@gmail.com
+  github: bnu-wangxun
 #  twitter: dbtek
 #  pinterest: asd123
 #  linkedin: asd123
