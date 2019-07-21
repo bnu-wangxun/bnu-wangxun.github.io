@@ -22,7 +22,7 @@
 }
 /* makes the font 33% larger relative to the icon container */
 .fa-lg {
-  font-size: 1.3333333333333333em;
+  font-size: 2.3em;
   line-height: 0.75em;
   vertical-align: -15%;
 }
@@ -182,7 +182,7 @@
   line-height: inherit;
 }
 .fa-stack-2x {
-  font-size: 2em;
+  font-size: 3em;
 }
 .fa-inverse {
   color: #ffffff;
