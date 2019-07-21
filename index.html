@@ -1,75 +1,177 @@
 ---
-layout: default
+layout: page
+tagline:
 ---
 
-<div id="ace-content" class="ace-container-shift">
-    <div class="ace-container">
-        <div id="ace-nav-wrap" class="hidden-sm hidden-xs">
-            <div class="ace-nav-cont">
-                <div id="ace-nav-scroll">
-                    <nav id="ace-nav" class="ace-nav">
-                        <ul class="clear-list">
-                            <li>
-                              <a href="index.html" data-tooltip="Home"><img class="avatar avatar-42" src="{{ '/styles/img/show-star.png' | prepend: site.baseurl }}" alt=""></a>
-                            </li>
-                            <li>
-                              <a href="#basic_info" data-tooltip="基本信息"><span class="ace-icon ace-icon-home"></span></a>
-                            </li>
-                            <li>
-                              <a href="#profetional" data-tooltip="职业技能"><span class="ace-icon ace-icon-experience"></span></a>
-                            </li>
+<!--
+{% for post in paginator.posts %}
+{% for post in site.posts %}
+{% endfor %}
+<article class="home">
 
-                            <li>
-                              <a href="#education" data-tooltip="教育经历"><span class="ace-icon ace-icon-portfolio"></span></a>
-                            </li>
-                            
-                            <li>
-                              <a href="#experience" data-tooltip="工作经历"><span class="ace-icon ace-icon-references"></span></a>
-                            </li>
-                            <li>
-                              <a href="#certification" data-tooltip="获得证书"><span class="ace-icon ace-icon-blog"></span></a>
-                            </li>
-                            <li>
-                              <a href="#personal_project" data-tooltip="个人作品"><span class="ace-icon ace-icon-snowflake-o"></span></a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+  <span class="post-date">
+    {% assign d = post.date | date: "%d" | plus:'0' %}
+    {{ post.date | date: "%B" }}
+    {% case d %}
+    {% when 1 or 21 or 31 %}{{ d }}st,
+    {% when 2 or 22 %}{{ d }}nd,
+    {% when 3 or 23 %}{{ d }}rd,
+    {% else %}{{ d }}th,
+    {% endcase %}
+    {{ post.date | date: "%Y" }}
+  </span>
 
-                <div id="ace-nav-tools" class="hidden">
-                    <span class="ace-icon ace-icon-dots-three-horizontal"></span>
+  <h2>
+    <a href="{{ site.BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
+  </h2>
 
-                    <button id="ace-nav-arrow" class="clear-btn">
-                        <span class="ace-icon ace-icon-chevron-thin-down"></span>
-                    </button>
-                </div>
-            </div>
+  <div>
+    {% if post.fullview %}
+    {{ post.content }}
+    {% else %}
+    {% if post.shortinfo %}
+    {{ post.shortinfo }}
+    {% elsif post.description %}
+    {{ post.description }}
+    {% else %}
+    {{ post.excerpt }}
+    {% endif %}
+    {% endif %}
+  </div>
 
-            <!-- <div class="ace-nav-btm"></div> -->
-        </div><!-- .ace-nav-wrap -->
+</article>
+{% endfor %}
+<hr/>
+-->
+<!-- biography -->
+<div class="bio">
+  <header>
+    <h1 margin="0px"><i class="fa fa-user"></i> Biography</h1>
+  </header>
+  <p>
+    <!--
+    Aoqian Zhang is currently a PhD candidate in institute of Information System and Engineering, <a href="http://thss.tsinghua.edu.cn/">School of Software</a>, <a href="http://www.tsinghua.edu.cn/">Tsinghua University</a>, under supervison of Prof. <a href="http://www.thss.tsinghua.edu.cn/publish/soft/3641/2010/20101214090035662150715/20101214090035662150715_.html">Jianmin Wang</a> and Prof. <a href="http://ise.thss.tsinghua.edu.cn/sxsong/index.html">Shaoxu Song</a>.
+    He received his B.E. in 2013 in Computer Software from School of Software, Tsinghua University.
+    -->
+    Aoqian Zhang is currently a Post Doctoral Fellow in <a href="https://uwaterloo.ca/data-systems-group/">data system group</a>, <a href="https://cs.uwaterloo.ca/">Cheriton School of Computer Science</a>, <a href="https://uwaterloo.ca/">University of Waterloo</a>, under supervison of Prof. <a href="https://cs.uwaterloo.ca/~ilyas/">Ihab Francis Ilyas</a>.
+    He received his Ph.D in 2018 in Software Engineering from School of Software, Tsinghua University, under supervision of Prof. <a href="http://www.thss.tsinghua.edu.cn/publish/soft/3641/2010/20101214090035662150715/20101214090035662150715_.html">Jianmin Wang</a> and Prof. <a href="http://ise.thss.tsinghua.edu.cn/sxsong/index.html">Shaoxu Song</a>.
+    He received his B.E. in 2013 in Computer Software from School of Software, Tsinghua University. 
+  </p>
+</div>
 
-        <div class="ace-paper-stock">
-            <main class="ace-paper clearfix">
-                <div class="ace-paper-cont clear-mrg">
-                    <!-- START: PAGE CONTENT -->
-                    <div class="padd-box clear-mrg">
+<!-- research interest -->
+<div class="research">
+  <header>
+    <h1 margin="0px"><i class="fa fa-star"></i> Research Interests</h1>
+  </header>
+  <p>
+    Data Cleaning, Data Imputation and Temporal Anomaly Detection.
+  </p>
+</div>
 
-                    {% include resumer_01-basic.html %}
+<!-- publications -->
+<div class="pub">
+  <header>
+    <h1 margin="0px"><i class="fa fa-file-text"></i> Publications
+    <a target="blank" href="https://scholar.google.com/citations?user=uKmgKfMAAAAJ">[Google Scholar]</a>
+    </h1>
+  </header>
 
-                    {% include resumer_02-profetional.html %}
+  <!--
+  <header>
+    <h2 margin="0px"><i class="fa fa-file"></i> Journals</h2>
+  </header>
+  -->
+  <ol>
+    <li>
+      <p>
+        [<span class="booktitle">PVLDB</span>]
+        <strong>Aoqian Zhang</strong>, Shaoxu Song*, Jianmin Wang, Philip S. Yu, 
+        "<a target="blank" href="http://www.vldb.org/pvldb/vol10/p1046-song.pdf">Time Series Data Cleaning: From Anomaly Detection to Anomaly Repairing</a>", 
+        PVLDB 10(10): 1046-1057 (2017)
+        [<a href="papers/Time Series Data Cleaning From Anomaly Detection to Anomaly Repairing.pdf">PDF</a>][<a href="https://github.com/zaqthss/vldb17-imr">Code@Github</a>]
+      </p>
+    </li>
+    <li>
+      <p>
+        [<span class="booktitle">PVLDB</span>]
+        Shaoxu Song*, <strong>Aoqian Zhang</strong>, Lei Chen, Jianmin Wang, 
+        "<a target="blank" href="http://www.vldb.org/pvldb/vol8/p1286-song.pdf">Enriching Data Imputation with Extensive Similarity Neighbors</a>", 
+        PVLDB 8(11): 1286-1297 (2015)
+        [<a href="papers/Enriching Data Imputation with Extensive Similarity Neighbors.pdf">PDF</a>]
+      </p>
+    </li>
+  <!--
+  </ol>
+  <header>
+    <h2 margin="0px"><i class="fa fa-file"></i> Conferences</h2>
+  </header>
+  <ol>
+  -->
+    <li>
+      <p>
+        [<span class="booktitle">ACM SIGMOD'16</span>]
+        <strong>Aoqian Zhang</strong>, Shaoxu Song*, Jianmin Wang, 
+        "<a target="blank" href="https://dl.acm.org/citation.cfm?doid=2882903.2915233">Sequential Data Cleaning: A Statistical Approach</a>",
+        ACM SIGMOD Conference, San Francisco, USA, June 26 - July 1, 2016
+        [<a href="papers/Sequential Data Cleaning A Statistical Approach.pdf">PDF</a>][<a href="https://github.com/zaqthss/sigmod16-scr">Code@Github</a>]
+      </p>
+    </li>
+    <li>
+      <p>
+        [<span class="booktitle">ACM SIGMOD'15</span>]
+        Shaoxu Song*, <strong>Aoqian Zhang</strong>, Jianmin Wang, Philip S. Yu
+        "<a target="blank" href="https://dl.acm.org/citation.cfm?doid=2723372.2723730">SCREEN: Stream Data Cleaning under Speed Constraints</a>",
+        ACM SIGMOD Conference, Melbourne, VIC, Australia, May 31 - June 4, 2015
+        [<a href="papers/SCREEN Stream Data Cleaning under Speed Constraints.pdf">PDF</a>][<a href="https://github.com/zaqthss/sigmod15-screen">Code@Github</a>]
+      </p>
+    </li>
+  </ol>
+</div>
 
-                    {% include resumer_03-education.html %}
+<!-- honors and awards -->
+<div class="awards">
+  <header>
+    <h1 margin="0px"><i class="fa fa-trophy"></i> Honors and Awards</h1>
+  </header>
+  <ol>
+    <li><p>
+    Tsinghua Zi Jing Scholar (<em>for counsellor who do fantastic job in research</em>)
+    </p></li>
+    <li><p>
+        2017, 2014, First-class Scholarship (Glodon Scholarship), Tsinghua University
+    </p></li>
+    <li><p>
+        2016, Tsinghua Lin Feng Counsellor Prize (<em>highest honor to counsellors of undergraduates</em>)
+    </p></li>
+    <li><p>
+        2015, National Scholarship, Tsinghua University
+    </p></li>
+    <li><p>
+        2015, Excellent Communist Party Member of Master in Tsinghua
+    </p></li>
+    <li><p>
+        2013, Data transfer group champion, Solve for tomorrow, National Youth Science Innovation Experiment Competition
+    </p></li>
 
-                    {% include resumer_04-experience.html %}
+    
+</div>
 
-                    {% include resumer_05-certification.html %}
-
-                    {% include resumer_06-personal_project.html %}
-                        
-                    </div><!-- .padd-box -->
-                <!-- END: PAGE CONTENT -->
-                </div><!-- .ace-paper-cont -->
-            </main><!-- .ace-paper -->
-        </div><!-- .ace-paper-stock -->
-    </div><!-- .ace-container -->
-</div><!-- #ace-content -->
+<!-- projects -->
+<div class="projects">
+  <header>
+    <h1 margin="0px"><i class="fa fa-tags"></i> Projects</h1>
+  </header>
+  <ol>
+    <li><p>
+    <Strong>TsQuality</Strong>. 
+    <br>A project develops data quality tools for large scale time series data, including data profiling, anomaly detection and data repairing. It is one of the projects in the <Strong>National Engineering Laboratory for Big Data Software(NEL-BDS)</Strong>
+    <br>
+    </p></li>
+  </ol>
+</div>
+<br>
+<br>
+<div>
+    <a href="https://clustrmaps.com/site/19vgv" title="Visit to Aoqian"><img src="//www.clustrmaps.com/map_v2.png?d=HViQDNuzGvSiuvPNl5vGpYfLk_XonOcQ5R1Uxj4jSoA&cl=ffffff" /></a>
+</div>

@@ -1,19 +1,40 @@
-# Site settings
-name: 王珣
-location: 深圳
-company: MaLong Tech
-position: Algorithm Engineer
-github: https://github.com/
-facebook: https://www.facebook.com/
-phone: 1580424XXXX
-email: xxxx@xxx.com
+# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
 
-baseurl: "/resume.io"
-
-permalink: /:year/:month/:day/:title/
-
-exclude: ['README.md']
-
-# Build settings
+paginate: 10 # pagination based on number of posts
+paginate_path: "page:num"
+exclude: ["README.md"] # files to exclude
+highlighter: rouge
 markdown: kramdown
+disqus: dbyll
+google_analytics: dbyll
+#title: Zhang Aoqian
 
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      title: Homepage
+
+description: Homepage of Zhang Aoqian
+author:
+  name: Zhang Aoqian
+  email: zaqthss2009@gmail.com
+  github: zaqthss
+#  twitter: dbtek
+#  pinterest: asd123
+#  linkedin: asd123
+#  bio: Your stylish, minimalist theme!
+#  email_md5: 726351295ec82e145928582f595aa3aa
+
+rss_path: feed.xml
+categories_path: categories.html
+tags_path: tags.html
+
+# set it as url of an image
+# sidebar_background_image: https://www.dropbox.com/s/g9h23zrycedxtk5/sky.png?raw=1
+
+BASE_PATH:
+
+#gems:
+#  - jekyll-paginate
