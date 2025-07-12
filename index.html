@@ -1,118 +1,244 @@
----
-layout: page
-tagline:
----
+<!DOCTYPE html>
+<html lang="en">
 
-<!--
-{% for post in paginator.posts %}
-{% for post in site.posts %}
-{% endfor %}
-<article class="home">
+<head>
+  <meta charset="utf-8" />
+  <title>Xun Wang – ByteDance Seed Vision Generation Team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Xun Wang - Research Scientist at ByteDance Seed Vision Generation Team. Research on Image & Video Generation/Editing." />
 
-  <span class="post-date">
-    {% assign d = post.date | date: "%d" | plus:'0' %}
-    {{ post.date | date: "%B" }}
-    {% case d %}
-    {% when 1 or 21 or 31 %}{{ d }}st,
-    {% when 2 or 22 %}{{ d }}nd,
-    {% when 3 or 23 %}{{ d }}rd,
-    {% else %}{{ d }}th,
-    {% endcase %}
-    {{ post.date | date: "%Y" }}
-  </span>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <h2>
-    <a href="{{ site.BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
-  </h2>
+  <style>
+    :root {
+      --bg: #fdfdfd;
+      --text: #111;
+      --accent: #0066cc;
+      --subtle: #f7f7f7;
+      --border: #e5e5e5;
+    }
 
-  <div>
-    {% if post.fullview %}
-    {{ post.content }}
-    {% else %}
-    {% if post.shortinfo %}
-    {{ post.shortinfo }}
-    {% elsif post.description %}
-    {{ post.description }}
-    {% else %}
-    {{ post.excerpt }}
-    {% endif %}
-    {% endif %}
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6em;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border);
+    }
+
+    header .name {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    header .affiliation {
+      font-size: 1.1rem;
+      color: #555;
+      margin: .25rem 0;
+    }
+
+    header .links {
+      margin-top: .5rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    header .links a {
+      font-size: 1.3rem;
+      color: var(--accent);
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: .5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: .6rem;
+    }
+
+    .pubs {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .pubs li {
+      margin-bottom: 1.2rem;
+      padding-left: 1.5em;
+      position: relative;
+    }
+
+    .pubs li::before {
+      content: "📄";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      font-size: 1em;
+    }
+
+    .pubs .title {
+      font-weight: 600;
+    }
+
+    .pubs .venue {
+      font-size: .9em;
+      color: #555;
+    }
+
+    .pubs a {
+      margin-left: .5em;
+      font-size: .85em;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: .8rem;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      header img {
+        width: 90px;
+        height: 90px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <img src="https://bnu-wangxun.github.io/assets/media/profile2.jpg" alt="Xun Wang" />
+      <div>
+        <h1 class="name">Xun Wang</h1>
+        <p class="affiliation">ByteDance · Seed Vision Generation Team</p>
+        <div class="links">
+          <a href="mailto:wangxun2016@outlook.com" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://scholar.google.com/citations?user=YourID" title="Google Scholar"><i
+              class="fab fa-google"></i></a>
+          <a href="https://github.com/bnu-wangxun" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://bnu-wangxun.github.io/assets/cv.pdf" title="CV"><i class="fas fa-file-alt"></i></a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2>About Me</h2>
+      <p>
+        I am a research scientist at <strong>ByteDance Seed Vision Generation Team</strong>, where I work on
+        large-scale image & video generation and editing. I received my M.S. in Probability and Statistics from
+        <strong>Sun Yat-Sen University</strong> (2018) and B.S. in Mathematics and Applied Mathematics
+        from <strong>Beijing Normal University</strong>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Research Interests</h2>
+      <ul>
+        <li>Image & Video Generation (Diffusion Models, GANs)</li>
+        <li>Image & Video Editing (Inpainting, Style Transfer, Motion Transfer)</li>
+        <li>Vision-Language Foundation Models</li>
+        <li>Deep Metric Learning</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Selected Publications</h2>
+      <ul class="pubs">
+        <li>
+          <span class="title">Seedream 2.0: A Native Chinese-English Bilingual Image Generation Foundation Model</span>
+          <br />
+          <span class="venue">Seed Tech Report, 2024</span>
+        </li>
+        <li>
+          <span class="title">Cross-Batch Memory for Embedding Learning</span>
+          <br />
+          <span class="venue">CVPR, 2020</span>
+          <a href="https://arxiv.org/abs/1912.06798">[PDF]</a>
+          <a href="https://github.com/wangxun1998/CrossBatchMemory">[Code]</a>
+        </li>
+        <li>
+          <span class="title">Multi-Similarity Loss with General Pair Weighting for Deep Metric Learning</span>
+          <br />
+          <span class="venue">CVPR, 2019</span>
+          <a href="https://arxiv.org/abs/1904.06627">[PDF]</a>
+          <a href="https://github.com/MalongTech/research-ms-loss">[Code]</a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <ul>
+        <li>
+          <strong>M.S. in Probability and Statistics</strong>, Sun Yat-Sen University (2016–2018)
+        </li>
+        <li>
+          <strong>B.S. in Mathematics and Applied Mathematics</strong>, Beijing Normal University (2012–2016)
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      © 2024 Xun Wang | Powered by <a href="https://pages.github.com/">GitHub Pages</a>
+    </footer>
   </div>
+</body>
 
-</article>
-{% endfor %}
-<hr/>
--->
-<!-- biography -->
-<div class="bio">
-  <header>
-    <h1 margin="0px"><i class="fa fa-user"></i> Xun Wang</h1>
-  </header>
-  <p>
-    Xun Wang is currently at Seed Vision Generation Team in ByteDance Inc.
-    He obtained his M.S. of Probability and Statistics in school of mathematics of  <strong> Sun Yat-Sen University</strong> in 2018.
-    <p></p>
-    Before that, he got his B.S. degree of Math and Applied Math from <strong>Beijing Normal University</strong>. 
-  </p>
-</div>
-
-<!-- research interest -->
-<div class="Interest">
-  <header>
-    <h1 margin="0px"><i class="fa fa-star"></i> Research Interests</h1>
-  </header>
-  <p>
-    Image/Video Generation/Editing.
-  </p>
-</div>
-
-<!-- publications -->
-<div class="pub">
-  <header>
-    <h1 margin="0px"><i class="fa fa-file-text"></i> Publications
-    </h1>
-  </header>
-
-  <!--
-  <header>
-    <h2 margin="0px"><i class="fa fa-file"></i> Journals</h2>
-  </header>
-  -->
-  <!-- <ol>
-    <li> -->
-      <p>
-        [<span class="booktitle">Seed Tech Report</span>]
-        <strong>Xun Wang</strong> (as one core contributer)
-        <a target="blank" href="https://arxiv.org/abs/2503.07703">Seedream 2.0: A Native Chinese-English Bilingual Image Generation Foundation Model
-</a>
-     <p>
-      <p>
-        [<span class="booktitle">CVPR-2020</span>]
-        <strong>Xun Wang</strong>, Haozhi Zhang, Weilin Huang, Matthew R. Scott
-        <a target="blank" href="https://arxiv.org/abs/1912.06798">Cross-Batch Memory for Embedding Learning
-</a>, 
-         (2020)
-        [<a href="https://arxiv.org/abs/1904.06627">PDF</a>][<a href="https://github.com/msight-tech/research-xbm">Code@Github</a>]
-      </p>
-
-      <p>
-        [<span class="booktitle">CVPR-2019</span>]
-        <strong>Xun Wang</strong>,  Xintong Han, Weilin Huang, Dengke Dong, Matthew R. Scott
-        <a target="blank" href="https://arxiv.org/abs/1904.06627">Multi-Similarity Loss with General Pair Weighting for Deep Metric Learning</a>, 
-         (2019)
-        [<a href="https://arxiv.org/abs/1904.06627">PDF</a>][<a href="https://github.com/MalongTech/research-ms-loss">Code@Github</a>]
-      </p>
-  
-        
-    <!-- </li>
-  
-  </ol>
-  <header>
-    <h2 margin="0px"><i class="fa fa-file"></i> Conferences</h2>
-  </header>
-  <ol>
-  -->
-  <!-- </ol> -->
-</div>
-
-<br>
+</html>
